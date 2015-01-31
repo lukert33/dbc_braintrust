@@ -1,0 +1,14 @@
+
+<ul>
+  <%= form_for login_path do |f| %>
+    <li>
+      <p>username or email</p>
+      <%= f.text_field :username %>
+    </li>
+    <li>
+      <p>password</p>
+      <%= f.password_field :password %>
+    </li>
+    <li> <%= f.submit %> </li>
+  <% end %>
+</ul>
