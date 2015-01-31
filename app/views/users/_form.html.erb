@@ -1,0 +1,31 @@
+  <% if !@user.errors.messages.empty? %>
+    <%= @user.errors.messages %>
+  <% end %>
+
+
+<ul>
+<%= form_for @user do |f| %>
+
+  <li>
+    <%= f.label :cohort %>
+    <%= f.text_field :cohort %>
+  </li>
+  <li>
+    <%= f.label :username  %>
+    <%= f.text_field :username %>
+  </li>
+  <li>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </li>
+  <li>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </li>
+  <li>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </li>
+  <li> <%= f.submit %> </li>
+<% end %>
+</ul>

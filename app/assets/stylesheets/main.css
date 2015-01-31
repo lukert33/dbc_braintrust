@@ -1,0 +1,23 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+#welcome-container{
+  border: 1px solid black;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  height: 80%;
+}
+#welcome-header {
+  font-size: 6em;
+  text-align: center;
+  width: 100%;
+  background-color: #84e087;
+  position: relative;
+  top: 0;
+}
+#options-container {
+  padding-left: 10%;
+}

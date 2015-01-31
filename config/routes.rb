@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   post '/login'  => 'sessions#create'
   get '/login'  =>  'sessions#new'
-
+  root 'welcome#index'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
