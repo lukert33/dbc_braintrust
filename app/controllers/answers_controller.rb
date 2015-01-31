@@ -7,8 +7,6 @@ class AnswersController < ApplicationController
   def new
     @answer = Answer.new
     @question = Question.find(params[:format])
-    p "**************"
-    p @question
   end
 
   def create
