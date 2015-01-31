@@ -1,5 +1,5 @@
 <h1>ALL ANSWERS</h1>
-
+<%= Question.find(@answers.first.question_id).prompt %>
 <%= @answers.each do |answer| %>
   <div class="answer">
     <%= answer.code %> <br>
