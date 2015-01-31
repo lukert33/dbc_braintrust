@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
   has_many :answers
   has_secure_password
 
-  def authenticate_login(username_email, password)
-    if username_email == self.username || username_email == self.email
-      authenticate(password)
+  def authenticate_login(session_params)
+    if session_params[:username] == self.username || session_params[:username] == self.email
+      self.authenticate(session_params[:password])
     else
       false
     end
