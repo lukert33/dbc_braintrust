@@ -1,4 +1,4 @@
-.vote-widget input{
+.vote-button input{
   border-radius: 50px;
   color: white;
   width: 59px;
@@ -16,7 +16,7 @@
   text-decoration: none;
 }
 
-.vote-widget-voted input{
+.vote-button input:hover {
   background: #d63cfc;
   background-image: -webkit-linear-gradient(top, #d63cfc, #aa34d9);
   background-image: -moz-linear-gradient(top, #d63cfc, #aa34d9);
@@ -24,10 +24,33 @@
   background-image: -o-linear-gradient(top, #d63cfc, #aa34d9);
   background-image: linear-gradient(to bottom, #d63cfc, #aa34d9);
   text-decoration: none;
+}
+
+input.vote-button-voted {
+  background: #34d981;
+  background-image: -webkit-linear-gradient(top, #34d981, #43b82c);
+  background-image: -moz-linear-gradient(top, #34d981, #43b82c);
+  background-image: -ms-linear-gradient(top, #34d981, #43b82c);
+  background-image: -o-linear-gradient(top, #34d981, #43b82c);
+  background-image: linear-gradient(to bottom, #34d981, #43b82c);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
   border-radius: 50px;
   color: white;
   width: 59px;
   height: 59px;
   border: 0;
   font-size: 2em;
+}
+
+
+input:hover.vote-button-voted  {
+  background: #7e3cfa;
+  background-image: -webkit-linear-gradient(top, #7e3cfa, #aa34d9);
+  background-image: -moz-linear-gradient(top, #7e3cfa, #aa34d9);
+  background-image: -ms-linear-gradient(top, #7e3cfa, #aa34d9);
+  background-image: -o-linear-gradient(top, #7e3cfa, #aa34d9);
+  background-image: linear-gradient(to bottom, #7e3cfa, #aa34d9);
+  text-decoration: none;
 }

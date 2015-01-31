@@ -1,0 +1,7 @@
+<div class="vote-widget">
+  <% if @vote %>
+    <%= button_to answer.votes.count, answer_vote_path(answer, @vote), method: :delete, class: "vote-button-voted" %>
+  <% else %>
+    <%= button_to answer.votes.count, answer_votes_path(answer), class: "vote-button" %>
+  <% end %>
+</div>
