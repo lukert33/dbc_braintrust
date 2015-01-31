@@ -1,6 +1,6 @@
 <h1>ALL ANSWERS</h1>
 
-<%= @answers.each do |answer| %>
+<% @answers.each do |answer| %>
   <div class="answer">
   <div class="answer-prose">
     <%= answer.prose %> <br><br>
@@ -16,5 +16,6 @@
   <div class="answered-by">
     Answered by: <%= User.find(answer.user_id).username %>
   </div>
+  <%= render partial: "votes/index", locals: {answer: answer} %>
   </div><br><br><br>
 <% end %>

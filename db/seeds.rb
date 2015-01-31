@@ -8,8 +8,14 @@ Question.create(
 
 data_structs = Category.create(name: "Data Structures")
 
-Question.create(
+min_stack = Question.create(
   title: "The Min Stack",
   prompt: "How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop, and min should all operate in O(1) time.",
   category_id: data_structs.id
 )
+
+user = User.create(username: "janedoe", cohort: "fiddler crabs", password: "jane", email:"jane@gmailsies.com")
+
+answer = min_stack.answers.create(prose: "Lorem ipsum dolor + vini vidi vici == yolo", user_id: user.id)
+
+answer.votes.create(user_id: user.id)
