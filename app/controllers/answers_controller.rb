@@ -10,6 +10,12 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.create(post_params)
+    render :show
+  end
+
+  def show
+    @answer = Answer.find(post_params)
+    @question = Question.find(@answer.question_id)
   end
 
   def edit
@@ -19,6 +25,6 @@ class AnswersController < ApplicationController
   end
 
   def post_params
-    params.require(:answer).permit(:user_id, :code, :prose)
+    params.require(:answer).permit(:code, :prose, :question_id)
   end
 end
