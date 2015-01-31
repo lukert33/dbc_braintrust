@@ -1,0 +1,15 @@
+<h1>Answer</h1>
+
+<%= form_for(@answer) do |f| %>
+  <div class="code">
+    <%= f.label :code, "Enter code here:" %>
+    <%= f.text_area :code %>
+  </div>
+  <div class="prose">
+    <%= f.label :prose, "Enter prose here:" %>
+    <%= f.text_area :prose %>
+  </div>
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+<% end %>
