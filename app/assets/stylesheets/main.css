@@ -1,0 +1,26 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+#welcome-container{
+
+  position: absolute;
+  top: 10%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  height: 80%;
+}
+#welcome-header {
+  font-size: 6em;
+  text-align: center;
+  width: 100%;
+  background-color: #84e087;
+  position: relative;
+  top: 0;
+  padding: 5%;
+}
+#options-container {
+  padding-left: 10%;
+  padding-top: 3%;
+  font-size: 4em;
+}
