@@ -1,0 +1,8 @@
+   <div id="login_bar">
+      <% if current_user %>
+      <%= button_to "Logout", "/logout" %>
+    <% else %>
+       <%= button_to "Login", "/login", method: :get %>
+      <%= button_to "Signup", new_user_path, method: :get %>
+    <% end %>
+</div>
