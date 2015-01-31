@@ -19,6 +19,7 @@ class AnswersController < ApplicationController
 
   def show
     @answer = Answer.find(post_params)
+    @question = Question.find(@answer.question_id)
   end
 
   def edit
