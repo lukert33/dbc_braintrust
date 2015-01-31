@@ -11,14 +11,14 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.create(post_params)
-    if @answer.language.downcase == "ruby"
-      File.open('hey.rb', 'w') {|f| f.write(@answer.code)}
-      @result_from_terminal = `ruby hey.rb`
-    else
-      File.open('hey.js', 'w') {|f| f.write(@answer.code)}
-      @result_from_terminal = `node hey.js`
-      p "**************"
-      p @result_from_terminal
+    unless @answer.code.split("").include?("`")
+      if @answer.language.downcase == "ruby"
+        File.open('hey.rb', 'w') {|f| f.write(@answer.code)}
+        @result_from_terminal = `ruby hey.rb`
+      else
+        File.open('hey.js', 'w') {|f| f.write(@answer.code)}
+        @result_from_terminal = `node hey.js`
+      end
     end
     @question = Question.find(@answer.question_id)
     @user = @current_user
