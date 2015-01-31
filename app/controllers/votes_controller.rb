@@ -1,21 +1,23 @@
 class VotesController < ApplicationController
   def create
     @answer = Answer.find(params[:answer_id])
-    @vote = @answer.votes.create(user_id: current_user)
-    render partial: "index", locals: {answer: answer}
+    @vote = @answer.votes.create(user_id: session[:user_id])
+    question = @answer.question
+    redirect_to answers_path(:question => question.id)
   end
 
   def destroy
     @answer = Answer.find(params[:answer_id])
-    vote = @answer.votes.find{|v| v.user_id == session[:user_id] }
+    vote = @answer.votes.find_by(user_id: session[:user_id])
     vote.destroy
-    render partial: "index", locals: {answer: answer}
+    question = @answer.question
+    redirect_to answers_path(:question => question.id)
   end
 
   def index
     @answer = Answer.find(params[:answer_id])
-    @vote = @answer.votes.where(user_id: session[:user_id])
-    render partial: "index", locals: {answer: answer}
+    @vote = @answer.votes.find_by(user_id: session[:user_id])
+    render partial: "index", locals: {answer: @answer}
   end
 
 end
