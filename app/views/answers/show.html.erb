@@ -7,7 +7,7 @@
     <%= @answer.prose %> <br><br>
   </div>
   <div class="answer-code">
-    <%= @answer.code %> <br><br>
+    <%= simple_format @answer.code %> <br><br>
   <button class="run-code">Run this code</button>
 
    <div class="answer-file">
@@ -18,3 +18,4 @@
     Answered by: <%= User.find(@answer.user_id).username %>
   </div>
 </div>
+
