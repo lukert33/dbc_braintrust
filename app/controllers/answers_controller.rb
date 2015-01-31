@@ -6,12 +6,20 @@ class AnswersController < ApplicationController
 
   def new
     @answer = Answer.new
-    @user = @current_user
     @question = Question.find(params[:format])
   end
 
   def create
     @answer = Answer.create(post_params)
+    if @answer.language.downcase == "ruby"
+      File.open('hey.rb', 'w') {|f| f.write(@answer.code)}
+      @result_from_terminal = `ruby hey.rb`
+    else
+      File.open('hey.js', 'w') {|f| f.write(@answer.code)}
+      @result_from_terminal = `node hey.js`
+      p "**************"
+      p @result_from_terminal
+    end
     @question = Question.find(@answer.question_id)
     @user = @current_user
     render :show
@@ -29,7 +37,7 @@ class AnswersController < ApplicationController
   end
 
   def post_params
-    params.require(:answer).permit(:code, :prose, :question_id, :user_id)
+    params.require(:answer).permit(:code, :prose, :question_id, :user_id, :language)
   end
 end
 

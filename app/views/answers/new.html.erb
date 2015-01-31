@@ -1,8 +1,13 @@
 <h1>Answer</h1>
+
 <%= @question.prompt %><br><br>
 <%= form_for @answer do |f| %>
 <%= f.hidden_field :question_id, value: @question.id %>
-<%= f.hidden_field :user_id, value: @user.id %>
+<%= f.hidden_field :user_id, value: session[:user_id] %>
+<div class="language">
+    <%= f.label :language, "Is this language in JavaScript or Ruby?:" %>
+    <%= f.select(:language,  options_for_select( ["Ruby", "JavaScript"])) %>
+  </div>
   <div class="code">
     <%= f.label :code, "Enter code here:" %>
     <%= f.text_area :code %>
