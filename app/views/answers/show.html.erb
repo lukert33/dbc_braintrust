@@ -1,6 +1,20 @@
-<h1>
-  <%= @question.prompt %>
-</h1>
 
-<%= @answer.code %> <br><br>
-<%= @answer.prose %>
+<div class="answer-container">
+  <div class="answer-prompt">
+    <h1><%= @question.prompt %></h1>
+  </div>
+  <div class="answer-prose">
+    <%= @answer.prose %> <br><br>
+  </div>
+  <div class="answer-code">
+    <%= @answer.code %> <br><br>
+  <button class="run-code">Run this code</button>
+
+   <div class="answer-file">
+     <%= @result_from_terminal %>
+   </div>
+  </div>
+  <div class="answered-by">
+    Answered by: <%= User.find(@answer.user_id).username %>
+  </div>
+</div>
