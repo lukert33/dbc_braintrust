@@ -2,9 +2,9 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 #welcome-container{
-  border: 1px solid black;
+
   position: absolute;
-  top: 5%;
+  top: 10%;
   bottom: 5%;
   left: 5%;
   right: 5%;
@@ -17,7 +17,10 @@ body {
   background-color: #84e087;
   position: relative;
   top: 0;
+  padding: 5%;
 }
 #options-container {
   padding-left: 10%;
+  padding-top: 3%;
+  font-size: 4em;
 }
