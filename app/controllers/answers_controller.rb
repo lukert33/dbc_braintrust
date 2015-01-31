@@ -6,14 +6,14 @@ class AnswersController < ApplicationController
 
   def new
     @answer = Answer.new
+    @user = @current_user
     @question = Question.find(params[:format])
-    p "**************"
-    p @question
   end
 
   def create
     @answer = Answer.create(post_params)
     @question = Question.find(@answer.question_id)
+    @user = @current_user
     render :show
   end
 
@@ -29,7 +29,7 @@ class AnswersController < ApplicationController
   end
 
   def post_params
-    params.require(:answer).permit(:code, :prose, :question_id)
+    params.require(:answer).permit(:code, :prose, :question_id, :user_id)
   end
 end
 
