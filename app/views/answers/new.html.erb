@@ -1,6 +1,7 @@
 <h1>Answer</h1>
-
-<%= form_for(@answer) do |f| %>
+<%= @question.prompt %><br><br>
+<%= form_for @answer do |f| %>
+<%= f.hidden_field :question_id, value: @question.id %>
   <div class="code">
     <%= f.label :code, "Enter code here:" %>
     <%= f.text_area :code %>

@@ -1,7 +1,11 @@
 <div>
   <ul>
     <% @questions.each do |question| %>
-    <li>  <%= question.prompt  %></li>
+    <li>  <%= question.prompt  %>
+          <%= link_to "Answer this question", new_answer_path(question.id) %>
+          <%= link_to "See other answers", answers_path(:question => question.id) %>
+    </li>
+
     <% end %>
   </ul>
 </div>

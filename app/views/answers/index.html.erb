@@ -1,0 +1,8 @@
+<h1>ALL ANSWERS</h1>
+
+<%= @answers.each do |answer| %>
+  <div class="answer">
+    <%= answer.code %> <br>
+    <%= answer.prose %>
+  </div><br><br><br>
+<% end %>
