@@ -9,9 +9,12 @@
 <body>
   <div id="content">
     <header>
-      <%= render "layouts/login_bar" %>
-      <%= render "layouts/navbar" %>
-
+      <nav class="navbar navbar-default ">
+        <ul class="nav nav-pills">
+          <%= render "layouts/navbar" %>
+          <%= render "layouts/login_bar" %>
+        </ul>
+      </nav>
     </header>
     <%= yield %>
   </div>

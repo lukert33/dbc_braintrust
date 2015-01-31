@@ -6,24 +6,34 @@
 <%= form_for @user do |f| %>
 
   <li>
-    <%= f.label :cohort %>
-    <%= f.text_field :cohort %>
+    <p>
+      <%= f.label :cohort %>
+      <%= f.text_field :cohort %>
+    </p>
   </li>
   <li>
-    <%= f.label :username  %>
-    <%= f.text_field :username %>
+    <p>
+      <%= f.label :username  %>
+      <%= f.text_field :username %>
+    </p>
   </li>
   <li>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <p>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </p>
   </li>
   <li>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </p>
   </li>
   <li>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <p>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </p>
   </li>
   <li> <%= f.submit %> </li>
 <% end %>
