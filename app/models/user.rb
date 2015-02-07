@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :votes
   has_many :answers
+  belongs_to :cohort
   has_secure_password
 
   def authenticate_login(session_params)
