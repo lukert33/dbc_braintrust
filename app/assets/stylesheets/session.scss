@@ -1,0 +1,62 @@
+#topbar{
+  position:fixed;
+  width: 100%;
+  height: 59px;
+  background-color: aqua;
+}
+#login_bar{
+width: 300px;
+position: fixed;
+z-index: 10;
+border: 1px;
+top: 0px;
+right: 0px;
+
+height: 59px;
+}
+
+#login_bar input{
+  background: #2bd66f;
+  background-image: -webkit-linear-gradient(top, #2bd66f, #389468);
+  background-image: -moz-linear-gradient(top, #2bd66f, #389468);
+  background-image: -ms-linear-gradient(top, #2bd66f, #389468);
+  background-image: -o-linear-gradient(top, #2bd66f, #389468);
+  background-image: linear-gradient(to bottom, #2bd66f, #389468);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  padding: 4px 10px 4px 10px;
+  text-decoration: none;
+  border: 0;
+  font-size: 1em;
+  display: inline;
+}
+
+#login_bar input:hover {
+  background: #41fa82;
+  text-decoration: none;
+}
+
+#login_bar li{
+  display: inline-block;
+  margin-left: 30px;
+}
+
+#navbar{
+     position:fixed;
+     width:300px;
+    display: inline-block;
+    top:0px;
+    left:0px;
+    border-bottom: 1px
+}
+#navbar a{
+
+    text-decoration: none;
+}
+#navbar a:hover{
+
+}
+
