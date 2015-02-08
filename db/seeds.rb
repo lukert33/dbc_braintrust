@@ -14,8 +14,25 @@ min_stack = Question.create(
   category_id: data_structs.id
 )
 
-user = User.create(username: "janedoe", cohort: "fiddler crabs", password: "jane", email:"jane@gmailsies.com")
+user = User.create(username: "janedoe",password: "jane", email:"jane@gmailsies.com")
 
 answer = min_stack.answers.create(prose: "Lorem ipsum dolor + vini vidi vici == yolo", user_id: user.id)
 
 answer.votes.create(user_id: user.id)
+
+Cohort.create(name: "Eastern Moose")
+Cohort.create(name: "Squirrel")
+Cohort.create(name: "Rock Doves")
+Cohort.create(name: "Roccoons")
+
+3.times do
+  User.create(username: Faker::Name.name, email:Faker::Internet.email, cohort_id: 1, password: "pee")
+  User.create(username: Faker::Name.name, email:Faker::Internet.email, cohort_id: 2, password: "pee")
+  User.create(username: Faker::Name.name, email:Faker::Internet.email, cohort_id: 3, password: "pee")
+end
+
+9.times do|id|
+
+  Answer.create(user_id: id, question_id:1, code:Faker::Lorem.sentences, prose: Faker::Lorem.sentences)
+  Answer.create(user_id: id, question_id:2, code:Faker::Lorem.sentences, prose: Faker::Lorem.sentences)
+end
